@@ -1,9 +1,11 @@
-<div class="card-deck" >
-  <div class="card" *ngFor="let product of products">
-    <img class="card-img-top" src="{{ product.imgUrl }}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+<div class="card-deck">
+  <div class="col-sm-4" *ngFor="let product of products">
+    <div class="card">
+      <img class="card-img-top" src="{{ product.imgUrl }}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.price }}$</h5>
+        <p class="card-text">{{product.name}}</p>
+      </div>
     </div>
   </div>
 </div>
