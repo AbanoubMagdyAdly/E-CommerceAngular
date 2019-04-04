@@ -8,9 +8,11 @@ import { SignupComponent } from './components/signup/signup.component';
 import { WishListComponent } from './components/wish-list/wish-list.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProductComponent } from './components/product/product.component';
+import { LoginSignupComponent } from './components/login-signup/login-signup.component';
 
 const routes: Routes = [
-  {path: ''               , component : HomeComponent},
+  {path: ''               , component : LoginSignupComponent},
+  {path: 'home'               , component : HomeComponent},
   {path: 'login'          , component : LoginComponent},
   {path: 'cart'           , component : CartComponent},
   {path: 'signup'         , component : SignupComponent},

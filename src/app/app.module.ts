@@ -10,6 +10,9 @@ import { ProductComponent } from './components/product/product.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { WishListComponent } from './components/wish-list/wish-list.component';
+import { FormsModule }   from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginSignupComponent } from './components/login-signup/login-signup.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +23,15 @@ import { WishListComponent } from './components/wish-list/wish-list.component';
     ProductComponent,
     LoginComponent,
     SignupComponent,
-    WishListComponent
+    WishListComponent,
+    LoginSignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

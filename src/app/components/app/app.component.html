@@ -3,7 +3,7 @@
     <div class="collapse navbar-collapse">
   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
     <li class="nav-item active">
-      <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link" routerLink="/home">Home</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" routerLink="/cart">Cart</a>
@@ -12,9 +12,10 @@
       <a class="nav-link" routerLink="/wishlist">wishlist</a>
     </li>
   </ul>
-  <a class="text-white" routerLink="/logout">logout</a>
+  <a class="text-white">{{name}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
 
-    </div>
+  <a class="text-white" href="#" (click)="logout()">logout</a>
+  </div>
 </nav>
 <router-outlet></router-outlet>
 

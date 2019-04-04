@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -6,7 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularE-commerce';
-
-  constructor() { }
-
+  public name;
+  constructor(private router : Router) { 
+    this.name = localStorage.getItem('name');
+  }
+  logout(){
+    localStorage.removeItem('name');
+    this.router.navigate(['']);
+    }
 }
