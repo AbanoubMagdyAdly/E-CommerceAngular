@@ -12,9 +12,10 @@
       <a class="nav-link" routerLink="/wishlist">wishlist</a>
     </li>
   </ul>
+  <div *ngIf="name!=null">
   <a class="text-white">{{name}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
-
   <a class="text-white" href="#" (click)="logout()">logout</a>
+  </div>
   </div>
 </nav>
 <router-outlet></router-outlet>
