@@ -7,8 +7,7 @@
       <div class="form-group">
         <label>
           Name:
-          <input type="text" formControlName="name" class="form-control" value={{name}}>
-
+          <input type="text" formControlName="name" class="form-control" >
           <span *ngIf="PersonalForm.touched && !PersonalForm.controls.name.valid"
             class="cross-validation-error-message alert alert-danger">
             name is required

@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
     console.log(this.PersonalForm);
     if(this.PersonalForm.value['password']==this.PersonalForm.value['passwordConfirmation']){
     localStorage.setItem('name', this.PersonalForm.value['name']);
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
     }
   }
 }

@@ -21,6 +21,6 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log(this.PersonalForm);
     localStorage.setItem('name', this.PersonalForm.value['name']);
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
   }
 }
