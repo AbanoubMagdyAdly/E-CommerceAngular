@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginSignupComponent } from './components/login-signup/login-signup.component';
 import { StreamService } from './stream.service';
 import { SingleProductComponent } from './components/single-product/single-product.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SingleProductComponent } from './components/single-product/single-produ
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgbModule
   ],
   providers: [StreamService],
   bootstrap: [AppComponent]
