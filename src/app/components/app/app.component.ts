@@ -10,9 +10,14 @@ import { StreamService } from 'src/app/stream.service';
 export class AppComponent {
   title = 'AngularE-commerce';
   public name;
+  public cartCount;
+  public wishListCount;
   constructor(private router : Router,private stream: StreamService) { 
     // this.name = localStorage.getItem('name');
     this.stream.getName().subscribe(res => this.name=res);
+    this.stream.getcartCount().subscribe(res => this.cartCount=res);
+    this.stream.getwishListCount().subscribe(res => this.wishListCount=res);
+
   }
   logout(){
     localStorage.removeItem('name');
