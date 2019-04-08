@@ -8,13 +8,16 @@ export class StreamService {
   private name: BehaviorSubject<string> = new BehaviorSubject('');
   private cartCount: BehaviorSubject<string> = new BehaviorSubject('');
   private wishListCount: BehaviorSubject<string> = new BehaviorSubject('');
+  private products: BehaviorSubject<string> = new BehaviorSubject('');
+
   constructor(){
     this.name.next(localStorage.getItem('name'))
     let cartproducts = JSON.parse(localStorage.getItem('cart'))  || [];
     let wishListproducts = JSON.parse(localStorage.getItem('wishlist')) || [];
+    let products = JSON.parse(localStorage.getItem('products')) || [];
     this.cartCount.next(cartproducts.length)
     this.wishListCount.next(wishListproducts.length)
-
+    this.products.next(products)
 
   }
   setName(val?: string): void {
@@ -27,6 +30,10 @@ export class StreamService {
      this.wishListCount.next(val);
   }
 
+  setProducts(val?: string): void {
+    this.products.next(val);
+ }
+
   getName() {
     return this.name.asObservable();
   }
@@ -35,5 +42,8 @@ export class StreamService {
   }
   getwishListCount(){
     return this.wishListCount.asObservable();
+  }
+  getProducts(){
+    return this.products.asObservable();
   }
 }
