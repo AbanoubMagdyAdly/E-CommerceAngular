@@ -6,10 +6,30 @@
       <a class="nav-link" routerLink="/home">Home</a>
     </li>
     <li class="nav-item" *ngIf="name!=null">
-      <a class="nav-link" routerLink="/cart">Cart : {{cartCount}}</a>
+        <div class="row">
+            <div class="col">
+              <div ngbDropdown class="d-inline-block" autoClose="outside">
+                <button class="btn nav-link" id="dropdownForm1" ngbDropdownToggle>Cart : {{cartCount}}</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+                  <app-cart></app-cart>
+                  <div class="dropdown-divider"></div>
+                </div>
+              </div>
+            </div>
+          </div>
     </li>
     <li class="nav-item" *ngIf="name!=null">
-      <a class="nav-link" routerLink="/wishlist">wishlist : {{wishListCount}}</a>
+        <div class="row">
+            <div class="col">
+              <div ngbDropdown class="d-inline-block" autoClose="outside">
+                <button class="btn nav-link" id="dropdownForm2" ngbDropdownToggle>Wishlist : {{wishListCount}}</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownForm2">
+                  <app-wish-list></app-wish-list>
+                  <div class="dropdown-divider"></div>
+                </div>
+              </div>
+            </div>
+          </div>
     </li>
   </ul>
   <div *ngIf="name!=null">
@@ -18,9 +38,9 @@
   </div>
   </div>
 </nav>
+
+
 <router-outlet></router-outlet>
-
-
 <div class="navbar-dark bg-dark sticky">
   <h1 class="text-white text-center">Abanoub Magdy Adly</h1>
 </div>
