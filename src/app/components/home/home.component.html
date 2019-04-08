@@ -6,8 +6,8 @@
         <h5 class="card-title">{{ product.price }}$</h5>
         <p class="card-textr">{{product.name}}</p>
       </div>
-      <a href="#" class="btn btn-primary">Add To Cart</a> 
-      <a href="#" class="btn btn-primary">Add To Wishlist</a>
+      <a  (click)="addToCart(product)" class="btn btn-primary">Add To Cart</a> 
+      <a  (click)="addToWishList(product)" class="btn btn-primary">Add To Wishlist</a>
     </div>
   </div>
 </div>
