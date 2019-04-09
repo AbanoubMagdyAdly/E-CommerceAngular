@@ -1,41 +1,41 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <div class="collapse navbar-collapse">
-  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-    <li class="nav-item active">
-      <a class="nav-link" routerLink="/home">Home</a>
-    </li>
-    <li class="nav-item" *ngIf="name!=null">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home">Home</a>
+      </li>
+      <li class="nav-item" *ngIf="name!=null">
         <div class="row">
-            <div class="col">
-              <div ngbDropdown class="d-inline-block" autoClose="outside">
-                <button class="btn nav-link" id="dropdownForm1" ngbDropdownToggle>Cart : {{cartCount}}</button>
-                <div ngbDropdownMenu aria-labelledby="dropdownForm1">
-                  <app-cart></app-cart>
-                  <div class="dropdown-divider"></div>
-                </div>
+          <div class="col">
+            <div ngbDropdown class="d-inline-block" autoClose="outside">
+              <button class="btn nav-link" id="dropdownForm1" ngbDropdownToggle>Cart : {{cartCount}}</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+                <app-cart></app-cart>
+                <div class="dropdown-divider"></div>
               </div>
             </div>
           </div>
-    </li>
-    <li class="nav-item" *ngIf="name!=null">
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="name!=null">
         <div class="row">
-            <div class="col">
-              <div ngbDropdown class="d-inline-block" autoClose="outside">
-                <button class="btn nav-link" id="dropdownForm2" ngbDropdownToggle>Wishlist : {{wishListCount}}</button>
-                <div ngbDropdownMenu aria-labelledby="dropdownForm2">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block" autoClose="outside">
+              <button class="btn nav-link" id="dropdownForm2" ngbDropdownToggle>Wishlist : {{wishListCount}}</button>
+              <!-- <div ngbDropdownMenu aria-labelledby="dropdownForm2">
                   <app-wish-list></app-wish-list>
                   <div class="dropdown-divider"></div>
-                </div>
-              </div>
+                </div> -->
             </div>
           </div>
-    </li>
-  </ul>
-  <div *ngIf="name!=null">
-  <a class="text-white">{{name}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
-  <a class="text-white" href="#" (click)="logout()">logout</a>
-  </div>
+        </div>
+      </li>
+    </ul>
+    <div *ngIf="name!=null">
+      <a class="text-white">{{name}}&nbsp;&nbsp;&nbsp;&nbsp;</a>
+      <a class="text-white" href="#" (click)="logout()">logout</a>
+    </div>
   </div>
 </nav>
 

@@ -12,16 +12,16 @@ export class AppComponent {
   public name;
   public cartCount;
   public wishListCount;
-  constructor(private router : Router,private stream: StreamService) { 
+  constructor(private router: Router, private stream: StreamService) {
     // this.name = localStorage.getItem('name');
-    this.stream.getName().subscribe(res => this.name=res);
-    this.stream.getcartCount().subscribe(res => this.cartCount=res);
-    this.stream.getwishListCount().subscribe(res => this.wishListCount=res);
+    this.stream.getName().subscribe(res => this.name = res);
+    this.stream.getcartCount().subscribe(res => this.cartCount = res);
+    this.stream.getwishListCount().subscribe(res => this.wishListCount = res);
 
   }
-  logout(){
+  logout() {
     localStorage.removeItem('name');
     this.stream.setName(localStorage.getItem('name'));
     this.router.navigate(['']);
-    }
+  }
 }
