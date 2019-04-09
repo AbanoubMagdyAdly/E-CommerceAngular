@@ -1,13 +1,13 @@
 <div class="card-deck">
-  <div class="col-sm-3" *ngFor="let product of products">
-    <div class="card" >
-      <img class="card-img-top" src="{{ product.imgUrl }}" height="300"  alt="Card image cap">
+  <div class="col-sm-4" *ngFor="let product of products">
+    <div class="card">
+      <img class="card-img-top" src="{{ product.imgUrl }}" height="300" alt="Card image cap">
       <div class="card-body text-center">
         <h5 class="card-title">{{ product.price }}$</h5>
         <p class="card-textr">{{product.name}}</p>
       </div>
-      <a  (click)="addToCart(product)" class="btn btn-primary">Add To Cart</a> 
-      <a  (click)="addToWishList(product)" class="btn btn-primary">Add To Wishlist</a>
+      <a (click)="addToCart(product)" class="btn btn-primary">Add To Cart</a>
+      <a (click)="addToWishList(product)" class="btn btn-primary">Add To Wishlist</a>
     </div>
   </div>
 </div>
