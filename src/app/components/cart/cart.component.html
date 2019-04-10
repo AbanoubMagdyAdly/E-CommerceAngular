@@ -1,4 +1,4 @@
-<div class="container" style="overflow: auto;height: 500px;">
+<div class="container" style="overflow: auto;height: 500px;" *ngIf="(cartProducts === undefined || cartProducts.length != 0); else empty">
   <table id="cart" class="table table-hover table-condensed">
     <thead>
       <tr>
@@ -24,22 +24,26 @@
         <td data-th="Quantity">
           <p type="number" class="form-control text-center" >{{ productcount?.quantity }}</p>
         </td>
-        <td data-th="Subtotal" class="text-center">{{ productcount.product?.price * productcount?.quantity}}</td>
+        <td data-th="Subtotal" class="text-center">{{ productcount.product?.price * productcount?.quantity}}$</td>
         <td class="actions" data-th="">
-          <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-          <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+          <button class="btn btn-danger btn-sm" (click)="remove(productcount.product?.id)">remove</button>
         </td>
       </tr>
     </tbody>
     <tfoot>
       <tr class="visible-xs">
-        <td class="text-center"><strong>Total 1.99</strong></td>
       </tr>
       <tr>
-        <td colspan="2" class="hidden-xs"></td>
-        <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+        <td colspan="4" class="hidden-xs"></td>
         <td><a class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
       </tr>
     </tfoot>
   </table>
 </div>
+<ng-template #empty>
+<div class="container" style="overflow: auto;height: 70px; width: 400px;">
+<h1>
+  No thing in the cart
+</h1>
+</div>
+</ng-template>
