@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
-import { StreamService } from 'src/app/stream.service';
+import { StreamService } from 'src/app/service/stream.service';
 import { Item } from 'src/app/item';
 @Component({
   selector: 'app-single-product',

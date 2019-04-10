@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl , Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { StreamService } from 'src/app/stream.service';
+import { StreamService } from 'src/app/service/stream.service';
 
 @Component({
   selector: 'app-login',

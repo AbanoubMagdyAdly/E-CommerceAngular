@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { StreamService } from 'src/app/stream.service';
+import { StreamService } from 'src/app/service/stream.service';
 import { Product } from 'src/app/product';
 import { Item } from 'src/app/item';
 
@@ -25,10 +25,6 @@ export class HomeComponent implements OnInit {
       });
   }
   addToCart(product) {
-    // let products = JSON.parse(localStorage.getItem('cart')) || [];
-    // products.push(id);
-    // localStorage.setItem('cart', JSON.stringify(products))
-
     let cart: any = JSON.parse(localStorage.getItem("cart")) || [];
     if (product) {
       var item = {
