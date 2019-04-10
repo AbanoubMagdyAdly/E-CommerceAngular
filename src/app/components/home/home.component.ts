@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { StreamService } from 'src/app/stream.service';
+import { Product } from 'src/app/product';
+import { Item } from 'src/app/item';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +11,7 @@ import { StreamService } from 'src/app/stream.service';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
-  products: object[];
+  products: Product[];
   constructor(private http: HttpClient, private router: Router, private stream: StreamService) {
     let name = localStorage.getItem('name');
     if (name === null || name === undefined) {
@@ -23,17 +25,52 @@ export class HomeComponent implements OnInit {
       });
   }
   addToCart(product) {
-    let products = JSON.parse(localStorage.getItem('cart')) || [];
-    products.push(product);
-    localStorage.setItem('cart', JSON.stringify(products))
-    this.stream.setcartCount(products.length)
-    this.stream.setProducts(JSON.stringify(products))
+    // let products = JSON.parse(localStorage.getItem('cart')) || [];
+    // products.push(id);
+    // localStorage.setItem('cart', JSON.stringify(products))
+
+    let cart: any = JSON.parse(localStorage.getItem("cart")) || [];
+    if (product) {
+      var item = {
+        product: product,
+        quantity: 1
+      };
+      if (!cart || !cart.length) {
+        cart.push(item);
+      } else {
+        let found: boolean = false;
+        cart.map(function(item) {
+          if (item.product.id == product.id) {
+            found = true;
+            item.quantity += 1;
+          }
+        });
+        if (!found) {
+          cart.push(item);
+        }
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }
+    this.stream.setcartCount(this.calculateTotalItems())
+    this.stream.setProducts(cart)
+  }
+  calculateTotalItems(): number {
+    let totalQty: number = 0;
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    if (cart) {
+      cart.map(function(item: Item) {
+        totalQty += item.quantity;
+      });
+    }
+    return totalQty;
   }
   addToWishList(product) {
+
     let products = JSON.parse(localStorage.getItem('wishlist')) || [];
     products.push(product);
     localStorage.setItem('wishlist', JSON.stringify(products))
     this.stream.setwishListCount(products.length)
+    console.log(product.id)
   }
 
 }
