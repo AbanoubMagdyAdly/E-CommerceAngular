@@ -11,7 +11,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule }   from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginSignupComponent } from './components/login-signup/login-signup.component';
-import { StreamService } from './stream.service';
+import { StreamService } from './service/stream.service';
 import { SingleProductComponent } from './components/single-product/single-product.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 

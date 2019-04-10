@@ -12,9 +12,10 @@
               <button class="btn nav-link" id="dropdownForm1" ngbDropdownToggle>Cart : {{cartCount}}</button>
               <div ngbDropdownMenu aria-labelledby="dropdownForm1">
                 <app-cart></app-cart>
-                <div class="dropdown-divider"></div>
+                <div class="col-sm-12 dropdown-divider"></div>
+                  <a class="text-center" routerLink="/cart" class="btn btn-primary">Goto Cart</a>
               </div>
-            </div>
+            </div> 
           </div>
         </div> 
       </li>
@@ -22,11 +23,7 @@
         <div class="row">
           <div class="col">
             <div ngbDropdown class="d-inline-block" autoClose="outside">
-              <button class="btn nav-link" id="dropdownForm2" ngbDropdownToggle>Wishlist : {{wishListCount}}</button>
-              <!-- <div ngbDropdownMenu aria-labelledby="dropdownForm2">
-                  <app-wish-list></app-wish-list>
-                  <div class="dropdown-divider"></div>
-                </div> -->
+              <button class="btn nav-link" id="dropdownForm2" >Wishlist : {{wishListCount}}</button>
             </div>
           </div>
         </div>
