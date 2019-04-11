@@ -21,7 +21,7 @@ export class SingleProductComponent implements OnInit {
         this.products = data["arrayOfProducts"];
         this.product = this.products[this.getSelectedIndex(this.route.snapshot.params.id)];
         if (!this.product) {
-      this.router.navigate(["notfound"]);
+        this.router.navigate(["notfound!!!!"]);
        }
       });
   }
